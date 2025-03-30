@@ -15,7 +15,7 @@ jobs:
       - name: Create Executable
         run: CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -tags lambda.norpc -o bootstrap .
       - name: Create Zip file for lambda function
-        run: zip -r code.zipbootstrap
+        run: zip -r code.zip bootstrap
       - name: AWS CLI v2
         uses: imehedi/actions-awscli-v2@latest
         with:
