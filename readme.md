@@ -28,7 +28,7 @@ This project is a **serverless API** built with **Go** and deployed to **AWS Lam
 
 1. Clone the repo:
    ```sh
-   git clone https://github.com/yourusername/lambda-api-go.git
+   git clone https://github.com/danieltonad/go-lambda-ci-cd.git
    cd lambda-api-go
    ```
 2. Install dependencies:
