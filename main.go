@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"strings"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -39,7 +40,7 @@ func generateSwaggerJSON() string {
 	paths := swagger["paths"].(map[string]interface{})
 	for _, route := range routes {
 		paths[route.Path] = map[string]interface{}{
-			route.Method: map[string]interface{}{
+			strings.ToLower(route.Method): map[string]interface{}{ // <-- Convert method to lowercase
 				"summary":     route.Summary,
 				"description": route.Description,
 				"responses": map[string]interface{}{
